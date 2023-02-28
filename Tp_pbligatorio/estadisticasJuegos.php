@@ -15,8 +15,8 @@
 // $montoDiciembreMesUsuario = 0;
 
 
-$mayorVenta = 0;
-$mayorJuegoVenta=array();
+$ventaMayor= 0;
+$mayorJuegoVenta=[];
 $arrayMonto = [];
 $incrementarMontoEnero =0;
 $incrementarMontoFebrero =0;
@@ -41,8 +41,11 @@ $opciones = menuOpciones();
 
         op1();
        
-    } elseif($opciones ==2 ){
-         op2();
+    }elseif($opciones ==2 ){
+        print_r($mayorJuegoVenta);
+         op2($mayorJuegoVenta,$incrementarMontoEnero ,$incrementarMontoFebrero ,$incrementarMontoMarzo ,
+         $incrementarMontoAbril ,$incrementarMontoMayo ,$incrementarMontoJunio ,$incrementarMontoJulio ,
+         $incrementarMontoAgosto ,$incrementarMontoSeptiembre ,$incrementarMontoOctubre ,$incrementarMontoNoviembre ,$incrementarMontoDiciembre );
           
     }elseif ($opciones ==3 ){
         $monto = op3();
@@ -57,21 +60,7 @@ $opciones = menuOpciones();
 
 
 
-/*MODULO superaMonto
-Esta verifica que el monto del mes ingresado sea mayor al anterior
-@param null
-@return null
-*/
-function superaMonto($mes){
-    if($mes > $mesMayor){
-        return $mes;
-    }else{
-        $mesMayor;
-    }
-    $mesMayor = 0;
 
-    
-}
 /*MODULO op3
 Esta funcion devuelve el primer mes que supere el monto maximo;
 @param null
@@ -93,66 +82,69 @@ Esta funcion contiene todas las funcionalidades de la opcion 2 del menu
 @param null
 @return null
 */
-function op2(){
+function op2($ventaMayor,$incrementEnero, $incrementFebrero, $incrementMarzo,$incrementAbril,$incrementMayo,$incrementJunio,$incrementJulio,$incrementAgosto,$incrementSept,$incremenetOct,$incremetNov,$incrementDic){
+print_r($ventaMayor);
+end();
+
  
-    if($incrementarMontoEnero >= $mayorVenta){
+    if($incrementEnero >= $ventaMayor['precioTicket']){
         echo "El mes con mayor ventas es ENERO \n";
         echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-       }elseif($incrementarMontoFebrero>= $mayorVenta){
+         print_r($ventaMayor);
+
+       }elseif($incrementFebrero >=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es FEBRERO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
+         print_r($ventaMayor);
 
-       }elseif($incrementarMontoMarzo >=  $mayorVenta){
+       }elseif($incrementMarzo>= $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es MARZO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
+         print_r($ventaMayor);
 
-       }elseif($incrementarMontoAbril >= $mayorVenta){
+       }elseif($incrementAbril >=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es ABRIL\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-
-       }elseif($incrementarMontoMayo >=  $mayorVenta){
+         print_r($ventaMayor);
+       }elseif($incrementMayo >=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es MAYO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-       }elseif($incrementarMontoJunio >=  $mayorVenta){
+         print_r($ventaMayor);
+
+       }elseif($incrementJunio >=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es JUNIO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-
-       }elseif($incrementarMontoJulio >=  $mayorVenta){
+         print_r($ventaMayor);
+         
+       }elseif($incrementJulio >=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es JULIO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-         
-       }elseif($incrementarMontoAgosto >=  $mayorVenta){
+         print_r($ventaMayor);
+
+       }elseif($incrementAgosto>=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es AGOSTO\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
+         print_r($ventaMayor);
 
-       }elseif($incrementarMontoSeptiembre >=  $mayorVenta){
+       }elseif($incrementSept>=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es SEPTIEMBRE\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
+         print_r($ventaMayor);
 
-       }elseif($incrementarMontoOctubre >=  $mayorVenta){
+       }elseif ($incremenetOct>=  $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es OCTUBRE\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
+         print_r($ventaMayor);
 
-       }elseif ($incrementarMontoNoviembre >=  $mayorVenta){
+       }elseif($incremetNov >= $ventaMayor['precioTicket']){
          echo "El mes con mayor ventas es NOVIEMBRE\n";
          echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-
-       }elseif($incrementarMontoDiciembre >= $mayorVenta){
-         echo "El mes con mayor ventas es DICIEMBRE\n";
-         echo "↓↓↓INFO↓↓↓\n";
-         print_r($mayorJuegoVenta);
-       }
+         print_r($ventaMayor);
+       }elseif($incrementDic>= $ventaMayor['precioTicket']){
+        echo "El mes con mayor ventas es DICIEMBRE\n";
+        echo "↓↓↓INFO↓↓↓\n";
+        print_r($ventaMayor);
+      }
 }
 
 
@@ -162,18 +154,20 @@ esta funcion contiene todas las funcionalidades de la opcion 1 del menu
 @return null
 */
 function op1(){ 
+
     /*STRING $mesVenta , $juego
     FLOAT $ticket, $montoVentTotalMes
     INT $vendidos $incremento
     ARRAY $juegoMayor, $$montoUsuario
     */
-    
-$incremento=0;
+    $mayorVenta = 0;
+    $countUser = 0;
+    $incremento=0;
 
         echo "===============USTED SELECCIONO LA OPCION 1 ========================\n";
         echo "Ingrese el mes de la venta: ";
         $mesVenta = strtoupper(trim(fgets(STDIN)));
-        $juegoMayor = juegoConMayorVenta();
+        
         
         switch($mesVenta){
 
@@ -185,10 +179,13 @@ $incremento=0;
                 echo "Ingrese cantidad de tickets vendidos en el mes de ENERO: ";
                 $vendidos = trim(fgets(STDIN));
                 $montoVentTotalMes= $ticket * $vendidos;
-                $montoUsuario = usuariosIngresosMontos($ticket, $vendidos);
+                $countUser = $countUser + 1;
+                $montoUsuario = usuariosIngresosMontos($ticket, $countUser);
                 if($montoVentTotalMes > $mayorVenta){
+                    $ventaMayor = $mayorVenta;
                     $mayorVenta = $montoVentTotalMes;
                     $mayorJuegoVenta = juegoConMayorVenta($juego, $ticket, $vendidos);
+                    
                     $incremento = $incremento + 1;
                     $incrementarMontoEnero = incrementarMontoDelMes($montoVentTotalMes, $incremento);
                     
@@ -567,7 +564,7 @@ $incremento=0;
     @param INT $cantTicketsVendidos
     @return ARRAY
     */
-    function juegoConMayorVenta($nombreJuego="",$precioTicket=0,$cantTicketsVendidos=0){
+    function juegoConMayorVenta($nombreJuego,$precioTicket,$cantTicketsVendidos){
         $juegoMayor=[
             'nombreJuego'=>$nombreJuego,
             'precioTicket'=>$precioTicket,
@@ -582,15 +579,30 @@ $incremento=0;
     @param INT $cantTickets
     return ARRAY;
     */
-    function usuariosIngresosMontos($montoUser,$cantTickets){
+    function usuariosIngresosMontos($montoUser,$cantUser){
    
-        for($i=0; $i<count($cantTickets);$i++){
+        for($i=0; $i<$cantUser;$i++){
             $arrayMonto [$i] = $montoUser;
         }
     
         return $arrayMonto; 
     }
-   
+
+   /*MODULO superaMonto
+Esta verifica que el monto del mes ingresado sea mayor al anterior
+@param null
+@return null
+*/
+function superaMonto($mes){
+    if($mes > $mesMayor){
+        return $mes;
+    }else{
+        $mesMayor;
+    }
+    $mesMayor = 0;
+
+    
+}
     
     echo "DESEA SEGUIR OPERANDO EN EL MENU ? (S/N): ";
     $resp = strtoupper(trim(fgets(STDIN)));
